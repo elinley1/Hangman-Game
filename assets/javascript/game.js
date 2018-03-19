@@ -1,7 +1,7 @@
 console.log("Starting game...");
 var gameState = {
     randomWord: "",
-    wordBank: ["MaineCoon", "Tabby", "Calico", "EygptianMau"],
+    wordBank: ["Abyssinian", "Bengal", "Balinese", "Himalayan", "MaineCoon", "Manx", "Korat", "Ocicat", "EygptianMau"],
     guessCount: 20,
     lettersGuessed: [],
     wins: 0,
@@ -48,9 +48,9 @@ function updateWins(gs) {
 function updateLosses(gs) {
     let newGs = gs;
     let newCount = gs.losses + 1;
-    newGs = updateWord(newGs);
     newGs.losses = newCount;
     newGs.guessCount = 20;
+    newGs = updateWord(newGs);
     newGs.lettersGuessed = [];
     return newGs;
 }
@@ -86,7 +86,7 @@ function hiddenWord(gs) {
             hw += currentWord[w];
         }
         else {
-            hw += "_";
+            hw += "_ ";
         }
     }
     return hw;
@@ -114,7 +114,7 @@ function wrongGuessLetters(gs) {
  */
 function winner(gs) {
     let hw = hiddenWord(gs);
-    return (hw === gs.randomWord && gs.guessCount > 0)
+    return (hw === gs.randomWord && gs.guessCount > 0);
 }
 
 function loser(gs) {
@@ -139,11 +139,11 @@ function handleLetterPress(e) {
     setTimeout(
         function () {
             if (winner(gameState)) {
-                alert("Congrats - you guessed the word.")
+                alert("Congrats - you saved the kitty by guessing the breed. Press any key to continue.")
                 gameState = updateWins(gameState);
             }
             else if (loser(gameState)) {
-                alert("You lose this round.")
+                alert("You lose this round, and the cat was skinned. Press any key to continue.")
                 gameState = updateLosses(gameState);
             }
         }, 0
@@ -160,6 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handler when the DOM is fully loaded
     //initialize gameState w/ a random word
     gameState = updateWord(gameState);
+    //alert("Play Skin the Cat - it's like classic Hangman, but with a kitty twist. Press 'Okay' to start.")
     render();
     wireEvents();
+    alert("Play Skin the Cat - it's like classic Hangman, but with a kitty twist. Press 'Okay' to start.")
 });

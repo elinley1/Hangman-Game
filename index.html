@@ -1,25 +1,41 @@
-<doctype html></doctype>
+<!DOCTYPE html>
+<html lang="en-us">
 
 <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hangman</title>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">  
 </head>
 
 <body>
-    <h1>Hangman</h1>
-    <p>
-        Random Word: <span id="randomWord"></span>
-    </p>
-    <p> Letters Guessed: <span id="wrongGuessLetters"></span></p>
-    <p>
-        Remaining Guesses: <span id="guessCount"></span>
-    </p>
-    <p>
-        Wins: <span id="wins"></span>
-    </p>
-    <p>
-        Losses: <span id="losses"></span>
-    </p>
-    <div id="currentWord"> </div>
-    <div><a id="newWordBtn" href="#">New Word</a></div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Don't Skin the Cat</h1>
+            <h3>Instructions: </h3>
+            <p>A generally obscure cat breed is randomly selected. You must guess the cat breed by pressing letter keys. If you guess the correct letter, it will be displayed in the name of the breed. If the letter is incorrect it will be recorded in "Incorrect Letters" and will result in the loss of a remaining guess. You are only allowed to choose 10 incorrect letters before you lose the round. If you guess the breed correctly before you use up all your incorrect remaining guesses, you win the round.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    Cat Breed: <span id="randomWord"></span>
+                </h2>
+                <p> Letters Guessed: <span id="wrongGuessLetters"></span></p>
+                <p>
+                    Remaining Guesses: <span id="guessCount"></span>
+                </p>
+                <p>
+                    Wins: <span id="wins"></span>
+                </p>
+                <p>
+                    Losses: <span id="losses"></span>
+                </p>
 </body>
