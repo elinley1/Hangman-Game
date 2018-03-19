@@ -141,14 +141,15 @@ function handleLetterPress(e) {
             if (winner(gameState)) {
                 alert("Congrats - you saved the kitty by guessing the breed. Press any key to continue.")
                 gameState = updateWins(gameState);
+                render();
             }
             else if (loser(gameState)) {
                 alert("You lose this round, and the cat was skinned. Press any key to continue.")
                 gameState = updateLosses(gameState);
+                render();
             }
         }, 0
     )
-
     render();
 }
 

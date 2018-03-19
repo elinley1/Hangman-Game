@@ -1,4 +1,15 @@
 body {
-    
     background-image: url("../imgs/background.jpeg");
+}
+
+p {
+    font-style: bold;
+    font-size: 20px;
+}
+.headerPic {
+    height: 100px;
+    width: auto;
+}
+#status {
+    border: solid 10px rgb(67, 100, 67);
 }
